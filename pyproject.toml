@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "chat-server"
+version = "0.1.0"
+description = ""
+authors = ["Oleksandr Hiliazov <oleksandr.hiliazov@gmail.com>"]
+readme = "README.md"
+packages = [{include = "chat_server"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = {extras = ["all"], version = "^0.109.0"}
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.13"
+pre-commit = "^3.6.0"
+
+[tool.ruff]
+line-length = 79
+extend-select = ["I"]
+
+[tool.ruff.isort]
+combine-as-imports = true
+split-on-trailing-comma = false
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
